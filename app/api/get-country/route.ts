@@ -13,7 +13,7 @@ export async function GET(req: NextRequest) {
     const countryCode = await getCountryFromCoords(lat, lng);
     return NextResponse.json({ countryCode });
   } catch (err) {
-     // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    console.error(err);
     return NextResponse.json({ error: 'Failed to get country' }, { status: 500 });
   }
 }
